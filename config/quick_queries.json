@@ -1,0 +1,12 @@
+{
+  "Full Graph": "MATCH (a)-[r]->(b) RETURN a, r, b LIMIT 200",
+  "Rahul's Care Team": "MATCH (m:Member {name:'Rahul Kapoor'})-[r]->(p) WHERE p:Therapist OR p:Psychiatrist OR p:CareCoordinator OR p:FamilyMember RETURN m, r, p",
+  "Rahul's Symptoms": "MATCH (m:Member {name:'Rahul Kapoor'})-[r:EXHIBITS]->(s:Symptom) RETURN m, r, s",
+  "Assessment Scores": "MATCH (m:Member {name:'Rahul Kapoor'})-[r:ASSESSED_WITH]->(a:Assessment) OPTIONAL MATCH (a)-[c:COMPARED_TO]->(a2:Assessment) RETURN m, r, a, c, a2",
+  "Session Timeline": "MATCH (s1:Session)-[r:FOLLOWED_BY]->(s2:Session) RETURN s1, r, s2",
+  "Medication Effects": "MATCH (m:Medication)-[r]->(x) RETURN m, r, x",
+  "Insights Discovered": "MATCH (s:Session)-[r:PRODUCED]->(i:Insight) RETURN s, r, i",
+  "Diagnosis & Treatment": "MATCH (d:Diagnosis)-[r]-(x) RETURN d, r, x",
+  "Journal & Mood": "MATCH (m:Member {name:'Rahul Kapoor'})-[r]->(j) WHERE j:JournalEntry OR j:MoodLog OPTIONAL MATCH (j)-[r2]->(t) RETURN m, r, j, r2, t",
+  "Anxiety Triggers": "MATCH (s:Session)-[r:DISCUSSED]->(t:Topic {category:'trigger'}) RETURN s, r, t"
+}

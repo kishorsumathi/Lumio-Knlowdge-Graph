@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "neo4j": {
+      "command": "uvx",
+      "args": ["mcp-neo4j-cypher"],
+      "env": {
+        "NEO4J_URI": "neo4j+s://c05a25fd.databases.neo4j.io",
+        "NEO4J_USERNAME": "c05a25fd",
+        "NEO4J_PASSWORD": "lAnri2mShLZ0vP-UP7RJFN3rHxCzjn8VuZXFt02lD4A",
+        "NEO4J_DATABASE": "c05a25fd"
+      }
+    }
+  }
+}
